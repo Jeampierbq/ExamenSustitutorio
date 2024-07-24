@@ -19,8 +19,11 @@ from django.urls import path
 from miapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name = "index"),
-    path('personas/', views.usuarios, name = "personas"),
+    path("admin/", admin.site.urls),
+    path('', views.index, name="index"),
+    path('usuarios/', views.usuarios, name="usuarios"),
+    path('agregar_usuario/', views.agregar_usuario, name='agregar_usuario'),
+    path('eliminar_usuario/<int:id>/', views.eliminar_usuario, name="eliminar_usuario"),
+    path('editar_usuario/<int:id>/', views.editar_usuario, name='editar_usuario'),
 ]
 

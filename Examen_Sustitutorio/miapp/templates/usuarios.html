@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Listado de Usuarios</h1>
+<a href="{% url 'agregar_usuario' %}" class="btn btn-add">Agregar Usuario</a>
+<ul>
+    {% for usuario in usuarios %}
+        <li>Login: {{ usuario.Barrios_login }} - 
+            Clave: {{ usuario.Barrios_clave }} - 
+            Estado: {{ usuario.get_Barrios_disponible_display }} - 
+            Fecha de registro: {{ usuario.Barrios_fecha_de_registro }} - 
+            <a href="{% url 'editar_usuario' id=usuario.id %}" class="btn btn-edit">Editar</a>
+            <a href="{% url 'eliminar_usuario' id=usuario.id %}" class="btn btn-delete">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}
+
+

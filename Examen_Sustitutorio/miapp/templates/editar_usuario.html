@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Editar Usuario</h1>
+<form action="{% url 'editar_usuario' usuario.id %}" method="post">
+    {% csrf_token %}
+    <label for="Barrios_login">Login:</label>
+    <input type="text" id="Barrios_login" name="Barrios_login" value="{{ usuario.Barrios_login }}" required>
+    <br>
+    <label for="Barrios_clave">Clave:</label>
+    <input type="text" id="Barrios_clave" name="Barrios_clave" value="{{ usuario.Barrios_clave }}" required>
+    <br>
+    <label for="Barrios_disponible">Disponibilidad:</label>
+    <select id="Barrios_disponible" name="Barrios_disponible">
+        <option value="A" {% if usuario.Barrios_disponible == 'A' %}selected{% endif %}>Activado</option>
+        <option value="D" {% if usuario.Barrios_disponible == 'D' %}selected{% endif %}>Desactivado</option>
+    </select>
+    <br>
+    <button type="submit">Guardar Cambios</button>
+</form>
+{% endblock %}
+
