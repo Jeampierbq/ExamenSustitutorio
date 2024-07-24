@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/gt-america-trial" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <title>Examen Sustitutorio - Usuarios</title>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <img src="{% static 'img/Untels_01.png' %}" alt="Logo UNTELS">
+            <a class="topbar-inner__helpcenter" href="#"></a>
+            <a class="topbar-inner__search" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);">
+                    <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Contenido dinámico de usuarios -->
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer__column">
+                <h3>Integrantes</h3>
+                <a href="#">Barrios Quispe Jeampier Jhoel</a>
+            </div>
+            <div class="footer__column">
+                <h3>Profesora</h3>
+                <a href="#">Flor Cerdan</a>
+            </div>
+            <div class="footer__column footer__column-copyright">
+                <p>Examen Sustitutorio</p>
+                <p>24/07/2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

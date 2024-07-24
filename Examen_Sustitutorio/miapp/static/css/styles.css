@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "GT America Trial", sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background-color: rgb(17, 92, 189);
+    padding: 0 30px;
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .topbar {
+        padding: 0;
+    }
+}
+
+.topbar-inner {
+    color: white;
+    font-size: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topbar-inner a {
+    text-decoration: none;
+    color: white;
+}
+
+.topbar-inner img {
+    display: block;
+    width: 45px;
+    margin-top: 20px;
+}
+
+.topbar-inner__helpcenter {
+    padding-left: 1rem;
+    text-align: center;
+    position: relative;
+    top: 0.1em;
+    border-left: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.topbar-inner__helpcenter:hover {
+    text-decoration: underline;
+}
+
+.topbar-inner__search {
+    margin-left: auto;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .topbar-inner__search {
+        display: flex !important;
+    }
+}
+
+.footer {
+    padding: 0.1rem 0;
+    background-color: rgb(5, 11, 98);
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer h3, .footer a, .footer p {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-inner {
+    margin: 0 auto;
+    padding-right: 200px;
+    padding-bottom: 1rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    position: relative;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__column-copyright {
+    position: absolute;
+    margin-top: auto;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media (max-width: 700px) {
+    .footer {
+        padding: 1rem 0;
+    }
+    .footer-inner {
+        padding: 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer__column-copyright {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+}
